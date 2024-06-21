@@ -7,41 +7,110 @@
   color: var(--black);
   scrollbar-width: none;
   scroll-behavior: smooth;
+  font-family: "Noto Sans", sans-serif;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* Random */
-
+body{
+  overflow-x: hidden;
+}
 :root{
-  --black: #000000;
+  --black-black: #000000;
+  --black: #1C2126;
   --white: #FFFFFF;
+  --grey: #737373;
+
+  --gallery: #F0F0F0;
 }
 
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 40px;
 }
 
 .content{
   max-width: 1080px;
   width: 100%;
-  margin: 20px 40px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+}
+
+.btn{
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 100px;
+  border: 2px solid var(--black);
+}
+.btn:hover{
+  color: var(--black);
+  background-color: var(--white);
 }
 
 /* Navigation */
-#nav .content{
+#nav{
+  min-height: 768px;
+  background-image: url("/assets/img/Navigation-Background-min.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#nav nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1;
-  background-color: #FFFFFF;
+}
+
+#nav .logo h1{
+  font-size: 30px;
 }
 
 #nav ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+
+#nav ul a{
+  color: var(--white);
+  line-height: 22px;
+  position: relative;
+}
+#nav ul a:hover{
+  color: var(--black);
+}
+#nav ul a:after{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: var(--white);
+  display: block;
+  margin-top: 8px;
+  border-radius: 2px;
+  transition: all 100ms ease-in-out;
+}
+#nav ul a:hover:after{
+  width: 100%;
+}
+
+#nav .contact{
+  padding: 13px 42px;
 }
 
 #nav i{
@@ -53,23 +122,158 @@
     cursor: pointer;
   }
   #nav ul{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     position: absolute;
     z-index: 0;
-    left: 100%;
-    top: -1000%;
-    transform: translateX(-100%);
-    transition: all 500ms ease-in-out;
+    left: 200%;
+    top: 150%;
+    transform: translate(-95%, -100%);
+    transition: all 250ms ease-in-out;
+  }
+  #nav ul a:after{
+    margin-top: 2px;
   }
   #nav ul.active{
-    top: 150%;
+    left: 95%;
+  }
+  #nav .contact{
+    display: none;
   }
 }
 
-/* X */
+#nav article{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#nav article h1{
+  color: var(--white);
+  font-size: 60px;
+  max-width: 760px;
+}
+#nav p{
+  max-width: 560px;
+  color: var(--white);
+  padding: 32.5px 0;
+}
+
+#nav .learn{
+  padding: 13px 42.2px;
+}
 
 
-/* X */
+/* ChatGPT */
+
+#chat-gpt section.content{
+  min-height: 753px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#chat-gpt h1{
+  font-size: 52px;
+}
+
+#chat-gpt article.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+#chat-gpt article.content article{
+  max-width: 344px;
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#chat-gpt img{
+  max-width: 344px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#chat-gpt article.content h1{
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#chat-gpt p{
+   color: var(--grey);
+}
+
+#chat-gpt .read{
+  padding: 13px 38px;
+}
+
+/* Gallery */
+
+
+#gallery{
+ background-color: var(--gallery);
+}
+
+#gallery .content{
+  min-height: 1523px;
+
+  display: flex;
+  gap: 27px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#gallery h1{
+  font-size: 52px;
+}
+
+#gallery article{
+  min-height: 1136px;
+  height: 0%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 608px 240px 240px;
+  gap: 24px;
+}
+#gallery .big-picture{
+  grid-column: 1/4;
+}
+#gallery .big-picture:hover{
+  border: none;
+}
+
+#gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#gallery img:hover{
+  border: 2px solid var(--black-black);
+}
+#gallery img.active{
+  border: 10px solid var(--black-black);
+}
+
+
+
+/* Contact */
 
 
 
