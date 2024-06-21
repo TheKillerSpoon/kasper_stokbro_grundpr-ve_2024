@@ -11,6 +11,7 @@
   color: var(--black);
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
 }
 
 /* Random */
@@ -22,27 +23,27 @@ body{
   --black: #1C2126;
   --white: #FFFFFF;
   --grey: #737373;
+  --light-grey: #A1A1A1;
+  --red: red;
 
   --gallery: #F0F0F0;
+  --footer: #EFF0F0;
 }
 
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 40px;
+  padding: 40px
 }
-
 .content{
   max-width: 1080px;
   width: 100%;
 }
-
 h1, h2, h3, h4, h5, h6{
   font-family: "proxima-nova", sans-serif;
   font-weight: 700;
 }
-
 .btn{
   color: var(--white);
   background-color: var(--black);
@@ -55,6 +56,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /* Navigation */
+
 #nav{
   min-height: 768px;
   background-image: url("/assets/img/Navigation-Background-min.jpg");
@@ -66,7 +68,6 @@ h1, h2, h3, h4, h5, h6{
   flex-direction: column;
   justify-content: flex-start;
 }
-
 #nav nav{
   display: flex;
   justify-content: space-between;
@@ -74,18 +75,15 @@ h1, h2, h3, h4, h5, h6{
   position: relative;
   z-index: 1;
 }
-
 #nav .logo h1{
   font-size: 30px;
 }
-
 #nav ul{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-
 #nav ul a{
   color: var(--white);
   line-height: 22px;
@@ -108,11 +106,9 @@ h1, h2, h3, h4, h5, h6{
 #nav ul a:hover:after{
   width: 100%;
 }
-
 #nav .contact{
   padding: 13px 42px;
 }
-
 #nav i{
   display: none;
 }
@@ -128,32 +124,32 @@ h1, h2, h3, h4, h5, h6{
     position: absolute;
     z-index: 0;
     left: 200%;
-    top: 150%;
-    transform: translate(-95%, -100%);
+    top: 350%;
+    transform: translate(-100%, -100%);
     transition: all 250ms ease-in-out;
   }
   #nav ul a:after{
     margin-top: 2px;
   }
   #nav ul.active{
-    left: 95%;
+    left: 100%;
   }
   #nav .contact{
     display: none;
   }
 }
-
 #nav article{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 40px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  width: 100%;
 }
 #nav article h1{
   color: var(--white);
@@ -165,11 +161,9 @@ h1, h2, h3, h4, h5, h6{
   color: var(--white);
   padding: 32.5px 0;
 }
-
 #nav .learn{
   padding: 13px 42.2px;
 }
-
 
 /* ChatGPT */
 
@@ -180,18 +174,15 @@ h1, h2, h3, h4, h5, h6{
   justify-content: space-evenly;
   align-items: center;
 }
-
 #chat-gpt h1{
   font-size: 52px;
 }
-
 #chat-gpt article.content{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
-
 #chat-gpt article.content article{
   max-width: 344px;
   min-height: 470px;
@@ -199,53 +190,43 @@ h1, h2, h3, h4, h5, h6{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
 }
-
 #chat-gpt img{
   max-width: 344px;
   width: 100%;
   object-fit: cover;
 }
-
 #chat-gpt article.content h1{
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
-
 #chat-gpt p{
    color: var(--grey);
 }
-
 #chat-gpt .read{
   padding: 13px 38px;
 }
 
 /* Gallery */
 
-
 #gallery{
  background-color: var(--gallery);
 }
-
 #gallery .content{
   min-height: 1523px;
 
   display: flex;
   gap: 27px;
   flex-direction: column;
-  text-align: center;
   align-items: center;
 }
-
 #gallery h1{
   font-size: 52px;
 }
-
 #gallery article{
+  margin-top: 60px;
   min-height: 1136px;
-  height: 0%;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -258,7 +239,6 @@ h1, h2, h3, h4, h5, h6{
 #gallery .big-picture:hover{
   border: none;
 }
-
 #gallery img {
   width: 100%;
   height: 100%;
@@ -271,21 +251,142 @@ h1, h2, h3, h4, h5, h6{
   border: 10px solid var(--black-black);
 }
 
-
-
 /* Contact */
+
+#contact{
+  min-height: 794px;
+  background-image: url("/assets/img/Contact-Background-min.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#contact .content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact h1{
+  color: var(--white);
+  font-size: 35px;
+  max-width: 618px;
+}
+#contact p{
+  color: var(--white);
+  max-width: 528px;
+  margin: 26px 0 60px 0;
+}
+#contact article{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  flex-wrap: wrap;
+}
+#contact form{
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+#contact input{
+  min-height: 48px;
+  text-align: start;
+  border-radius: 16px;
+  padding: 0 16px;
+  outline: none;
+  border: none;
+}
+#contact input::placeholder{
+  color: var(--black);
+}
+#contact textarea{
+  min-height: 174px;
+  resize: none;
+  text-align: start;
+  border-radius: 16px;
+  padding: 17px 15px;
+  outline: none;
+  border: none;
+}
+#contact textarea::placeholder{
+  color: var(--black);
+}
+#contact .missing{
+  border: 4px solid var(--red);
+}
+#contact .missing::placeholder{
+  color: red;
+}
+#contact .apply{
+  padding: 13px 0;
+}
+#contact img{
+  max-width: 485px;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.29);
+}
 
 
 
 /* Footer */
+#footer{
+  background-color: var(--footer);
+}
 #footer .content{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 240px;
 }
-
-#footer ul{
+#footer .openai{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 18px;
+}
+#footer .openai h1{
+  font-size: 35px;
+}
+#footer .openai p{
+  max-width: 344px;
+  text-align: start;
+  color: var(--light-grey);
+}
+#footer .openai ul{
+  display: flex;
+  margin-top: 15px;
+  gap: 16px;
+}
+#footer .openai i{
+  background-color: var(--white);
+  border-radius: 100px;
+  width: 48px;
+  height: 48px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+#footer .resources{
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+#footer .resources h1{
+  font-size: 26px;
+}
+#footer .resources ul{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+#footer .resources a {
+  font-size: 18px;
 }
